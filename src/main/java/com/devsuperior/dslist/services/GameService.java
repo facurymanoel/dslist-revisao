@@ -19,7 +19,7 @@ public class GameService {
 	@Autowired
 	private GameRepository gameRepository;
 
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = true)//banco de dados fica mais rápido
 	public GameDTO findById(Long id) {
 
 		Game result = gameRepository.findById(id).get();
@@ -27,7 +27,7 @@ public class GameService {
 		return dto;
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = true)//banco de dados fica mais rápido
 	public List<GameMinDTO> findAll() {
 
 		List<Game> result = gameRepository.findAll();
